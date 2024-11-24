@@ -1,0 +1,127 @@
+@import './css/bootstrap.min.css';
+@import './css/kaiadmin.min.css';
+@import './css/plugins.min.css';
+@import './css/filetree.css';
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-center {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-btn {
+    border: none;
+    background: none;
+}
+
+.loading-window {
+    top: 0;
+    left: 0;
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 1031;
+    background-color: #0000001f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots-btn:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.btn-none {
+    border: none;
+    background: none;
+}
+.file-header {
+    color: black;
+    background-color: #ececec;
+    left: 0.5em;
+    margin: 0.25em 0.25em 0;
+    width: 100%;
+    font-weight: bold;
+    padding: 0.25em;
+    border-radius: 0.25em 0.25em 0 0;
+}
+
+.member-list {
+    display: flex;
+    flex-direction: column;
+
+    border: #0a0b11 1px solid;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.list-color, .member-list{
+    background-color: #1a2035;
+    color: #8d9498;
+}
+
+.members {
+    max-height: 50vh;
+    overflow-y: auto;
+
+}
+.members>*{
+    background-color: #374163;
+    color: #b3b3b3;
+}
+
+#style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+#style-3::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+}
+
+#style-3::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+.member-window {
+    left: 0;
+
+    position: fixed;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+.member-window > .row {
+    margin-top: 100px;
+}
+
+.member-window > * {
+    width: 100%;
+}
+
+.container-meet{
+    position: absolute;
+    background-color: #3A3B41;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    left: 0;
+}
+
+

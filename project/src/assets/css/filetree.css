@@ -1,0 +1,156 @@
+.file-ul {
+    display: inline-block;
+    float: left;
+    clear: left;
+    margin: 0.25em;
+    padding: 0;
+    background: pink;
+    z-index: 0;
+}
+.file-ul:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0.25em;
+    right: auto;
+    bottom: 0;
+    left: 1.75em;
+    margin: auto;
+    border-right: dotted black 0.1em;
+    width: 0;
+    height: auto;
+}
+.file-ul:after {
+    content: "-";
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: -0.5em;
+    margin: 0.65em;
+    padding: 0;
+    width: 0.8em;
+    height: 0.8em;
+    text-align: center;
+    line-height: 0.6em;
+    font-size: 1em;
+    background: blue;
+}
+.file-ul > li {
+    display: block;
+    position: relative;
+    float: left;
+    clear: both;
+    right: auto;
+    padding-left: 1em;
+    width: auto;
+    text-align: center;
+    color: white;
+    background: gray;
+}
+.file-ul > li > input {
+    display: block;
+    position: absolute;
+    float: left;
+    z-index: 4;
+    margin: 0 0 0 -1em;
+    padding: 0;
+    width: 1em;
+    height: 2em;
+    font-size: 1em;
+    opacity: 0;
+    cursor: pointer;
+}
+.file-ul > li > input:checked ~ ul:before {
+    display: none;
+}
+.file-ul > li > input:checked ~ ul:after {
+    content: "+";
+}
+.file-ul > li > input:checked ~ ul * {
+    display: none;
+}
+.file-ul > li > span {
+    display: block;
+    position: relative;
+    float: left;
+    z-index: 3;
+    margin: 0.25em;
+    padding: 0.25em;
+    background: lightblue;
+}
+.file-ul > li > span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #e2e2e2;
+}
+.file-ul > li > span:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -1em;
+    top: 0;
+    bottom: 0;
+    margin: auto 0.25em auto 0.25em;
+    border-top: dotted black 0.1em;
+    width: 0.75em;
+    height: 0;
+}
+
+.file-ul > li:last-child:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 1em;
+    left: 0;
+    bottom: -0.25em;
+    width: 0.75em;
+    height: auto;
+    background: lightblue;
+}
+
+.file-tree {
+    position: relative;
+    font-family: "Georgia";
+}
+.file-tree:before {
+    left: 0.5em;
+}
+.file-tree:after {
+    display: none;
+}
+
+/*decoration*/
+.file-ul,
+.file-ul > li:last-child:before {
+    background: white;
+}
+.file-ul > li {
+    background: transparent;
+}
+.file-ul:after {
+    background: white;
+    color: black;
+    border: solid gray 1px;
+    border-radius: 0.1em;
+}
+.file-ul > li > span {
+    border-radius: 0.25em;
+    color: black;
+    background: white;
+}
+.file-ul > li > input ~ span:before {
+    content: "";
+    display: inline-block;
+    margin: 0 0.25em 0 0;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+
+    background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20576%20512%22%3E%3Cpath%20d%3D%22M384%20480l48%200c11.4%200%2021.9-6%2027.6-15.9l112-192c5.8-9.9%205.8-22.1%20.1-32.1S555.5%20224%20544%20224l-400%200c-11.4%200-21.9%206-27.6%2015.9L48%20357.1%2048%2096c0-8.8%207.2-16%2016-16l117.5%200c4.2%200%208.3%201.7%2011.3%204.7l26.5%2026.5c21%2021%2049.5%2032.8%2079.2%2032.8L416%20144c8.8%200%2016%207.2%2016%2016l0%2032%2048%200%200-32c0-35.3-28.7-64-64-64L298.5%2096c-17%200-33.3-6.7-45.3-18.7L226.7%2050.7c-12-12-28.3-18.7-45.3-18.7L64%2032C28.7%2032%200%2060.7%200%2096L0%20416c0%2035.3%2028.7%2064%2064%2064l23.7%200L384%20480z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.file-ul > li > input:checked ~ span:before {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20d%3D%22M64%20480H448c35.3%200%2064-28.7%2064-64V160c0-35.3-28.7-64-64-64H288c-10.1%200-19.6-4.7-25.6-12.8L243.2%2057.6C231.1%2041.5%20212.1%2032%20192%2032H64C28.7%2032%200%2060.7%200%2096V416c0%2035.3%2028.7%2064%2064%2064z%22%2F%3E%3C%2Fsvg%3E");
+}
